@@ -4,43 +4,36 @@ import com.samitchell.simple_calculator.data_structures.*;
 import java.lang.StringBuilder;
 
 public class ShuntingYard {
-	private final Operator PLUS = new Operator("+", 0, "Left");
-	private final Operator MINUS = new Operator("-", 0, "Left");
-	private final Operator TIMES = new Operator("*", 1, "Left");
-	private final Operator DIV = new Operator("/", 1, "Left");
-	private final Operator EXP = new Operator("^", 1, "Right");
 	
-	private String infix;
+	private String[] tokens;
 	
 	public ShuntingYard(String infix)
 	{
-		this.infix = this.cleanUp(infix);
+		this.tokens = infix.split(" ");
 	}
 	
-	private String cleanUp(String input) {
-		StringBuilder cleaned = new StringBuilder();
-		
-		for (int i = 0; i < input.length(); i++) {
-			char cur = input.charAt(i);
-			if (Character.isDigit(cur) || cur == '+' || cur == '-' || cur == '*' ||
-					cur == '/' || cur == '(' || cur == ')') {
-				cleaned.append(cur + " ");
-			} else {
-				return "Invalid input";
-			}
+	/**
+	 * Checks if a token is a number (always a double)
+	 * @param token
+	 * @return	whether or not the token is a double
+	 */
+	private boolean tokenIsNumeric(String token) {
+		try {
+			Double.parseDouble(token);
+		} catch (NumberFormatException e) {
+			return false;
 		}
 		
-		return cleaned.toString().trim();
+		return true;
 	}
 	
-	public String infixToPostfix() {
-		if (this.infix == "Invalid input") {
-			return this.infix;
-		} else {
-			StringBuilder postfix = new StringBuilder(this.infix);
+	public Queue<String> infixToPostfix() {
+		Queue<String> output = new Queue<String>();
+		
+		for (String token : this.tokens) {
 			
-			
-			return postfix.toString();
 		}
-	}
+		
+		return output;
+	}	
 }

@@ -1,6 +1,12 @@
 package com.samitchell.simple_calculator.data_structures;
 
 public class Operator {
+	public static final Operator PLUS = new Operator("+", 0, "Left");
+	public static  final Operator MINUS = new Operator("-", 0, "Left");
+	public static  final Operator TIMES = new Operator("*", 1, "Left");
+	public static  final Operator DIV = new Operator("/", 1, "Left");
+	public static  final Operator EXP = new Operator("^", 1, "Right");
+	
 	private String operator;
 	private int precendence;
 	private String associativity;
@@ -25,6 +31,17 @@ public class Operator {
 	}
 	
 	/**
+	 * Equals method
+	 * @param toCheck	the operator to check for equality
+	 * @return	whether or not toCheck is the same operator as this
+	 */
+	public boolean equals(Operator toCheck) {
+		return ((this.operator == toCheck.getOperator()) 
+				&& (this.precendence == toCheck.getPrecedence()) 
+				&& (this.associativity == toCheck.getAssociativity()));
+	}
+	
+	/**
 	 * Accessor method for the associativity field
 	 * @return	the value of the associativity field
 	 */
@@ -46,6 +63,15 @@ public class Operator {
 	 */
 	public int getPrecedence() {
 		return this.precendence;
+	}
+	
+	/**
+	 * Checks whether this has higher precedence than a supplied operator toCheck
+	 * @param toCheck	the operator to compare precedence
+	 * @return	whether or not this has higher precedence than toCheck
+	 */
+	public boolean isHigherThan(Operator toCheck) {
+		return this.precendence > toCheck.getPrecedence();
 	}
 	
 	/**

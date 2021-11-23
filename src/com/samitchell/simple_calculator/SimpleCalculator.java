@@ -1,11 +1,14 @@
 package com.samitchell.simple_calculator;
 
 import com.samitchell.simple_calculator.algorithms.*;
+import com.samitchell.simple_calculator.data_structures.*;
 import java.util.Scanner;
 
 public class SimpleCalculator {
 	public static void main(String[] args) {
-		System.out.println("Welcome to Simple Calculator.\nType 'exit' to exit.");
+		System.out.println("Welcome to Simple Calculator.\n"
+				+ "Entry must include a single space between tokens.\n"
+				+ "Type 'exit' to exit.");
 		Scanner console = new Scanner(System.in);
 		boolean running = true;
 		
@@ -15,12 +18,12 @@ public class SimpleCalculator {
 			
 			if (input.equals("exit")) {
 				running = false;
-				System.out.println("Exiting...");
+				System.out.println("Done.");
 			} else {
 				ShuntingYard shuntingYard = new ShuntingYard(input);
-				String postfix = shuntingYard.infixToPostfix();
+				Queue<String> postfix = shuntingYard.infixToPostfix();
 				
-				if (postfix == "Invalid input") {
+				if (postfix.isEmpty()) {
 					System.out.println("Syntax error.");
 				} else {
 					System.out.println(postfix);
