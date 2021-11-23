@@ -5,6 +5,11 @@ import com.samitchell.simple_calculator.data_structures.*;
 import java.util.Scanner;
 
 public class SimpleCalculator {
+	public SimpleCalculator() {
+		System.out.println("Welcome to Simple Calculator.\n"
+				+ "Type 'exit' to exit.");
+	}
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Simple Calculator.\n"
 				+ "Entry must include a single space between tokens.\n"
