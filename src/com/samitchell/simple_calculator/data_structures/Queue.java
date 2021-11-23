@@ -16,6 +16,7 @@ public class Queue<T> {
 		this.items = (T[]) new Object[this.capacity];
 	}
 	
+	@SuppressWarnings("unchecked")
 	private void allocate() {
 		int newCapacity = 2 * this.capacity;
 		T[] newItems = (T[]) new Object[newCapacity];

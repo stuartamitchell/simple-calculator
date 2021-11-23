@@ -5,14 +5,8 @@ import com.samitchell.simple_calculator.data_structures.*;
 import java.util.Scanner;
 
 public class SimpleCalculator {
-	public SimpleCalculator() {
-		System.out.println("Welcome to Simple Calculator.\n"
-				+ "Type 'exit' to exit.");
-	}
-	
 	public static void main(String[] args) {
 		System.out.println("Welcome to Simple Calculator.\n"
-				+ "Entry must include a single space between tokens.\n"
 				+ "Type 'exit' to exit.");
 		Scanner console = new Scanner(System.in);
 		boolean running = true;
@@ -25,13 +19,24 @@ public class SimpleCalculator {
 				running = false;
 				System.out.println("Done.");
 			} else {
-				ShuntingYard shuntingYard = new ShuntingYard(input);
-				Queue<String> postfix = shuntingYard.infixToPostfix();
+				Tokenizer tokenizer = new Tokenizer(input);
+				String tokens = tokenizer.toTokenString();
 				
-				if (postfix.isEmpty()) {
+				if (tokens.equals("Invalid input")) {
 					System.out.println("Syntax error.");
 				} else {
-					System.out.println(postfix);
+					ShuntingYard shuntingYard = new ShuntingYard(tokens);
+					Queue<String> postfix = shuntingYard.infixToPostfix();
+					
+					if (postfix.isEmpty()) {
+						System.out.println("Mismatched parentheses.");
+					} else {
+						while(!postfix.isEmpty()) {
+							System.out.print(postfix.dequeue() + " ");
+						}
+						
+						System.out.print("\n");
+					}
 				}
 			}
 		}
