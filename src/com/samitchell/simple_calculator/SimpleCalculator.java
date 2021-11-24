@@ -20,9 +20,9 @@ public class SimpleCalculator {
 				System.out.println("Done.");
 			} else {
 				Tokenizer tokenizer = new Tokenizer(input);
-				String tokens = tokenizer.toTokenString();
+				String[] tokens = tokenizer.toTokenString();
 				
-				if (tokens.equals("Invalid input")) {
+				if (tokens == null) {
 					System.out.println("Syntax error.");
 				} else {
 					ShuntingYard shuntingYard = new ShuntingYard(tokens);
@@ -31,11 +31,14 @@ public class SimpleCalculator {
 					if (postfix.isEmpty()) {
 						System.out.println("Mismatched parentheses.");
 					} else {
-						while(!postfix.isEmpty()) {
-							System.out.print(postfix.dequeue() + " ");
-						}
+						PostfixEvaluator postfixEvaluator = new PostfixEvaluator(postfix);
+						double result = postfixEvaluator.evaluate();
 						
-						System.out.print("\n");
+						if (result == Double.NaN) {
+							System.out.println("Math error.");
+						} else {
+							System.out.println(result);
+						}
 					}
 				}
 			}
