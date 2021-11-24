@@ -2,6 +2,13 @@ package com.samitchell.simple_calculator.algorithms;
 
 import com.samitchell.simple_calculator.data_structures.*;
 
+/**
+ * A class for the shunting yard algorithm for parsing a mathematical expression in infix
+ * notation to postfix or reverse Polish notation
+ * 
+ * @author Stuart A Mitchell
+ *
+ */
 public class ShuntingYard {
 	
 	private String[] tokens;

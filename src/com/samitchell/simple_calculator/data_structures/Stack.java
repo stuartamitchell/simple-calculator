@@ -1,5 +1,12 @@
 package com.samitchell.simple_calculator.data_structures;
 
+/**
+ * A class to represent a stack of objects of type T
+ * 
+ * @author Stuart A Mitchell
+ *
+ * @param <T>	the type of the objects in the stack
+ */
 public class Stack<T> {
 	private T[] items;
 	private int capacity;
@@ -40,7 +47,7 @@ public class Stack<T> {
 	}
 	
 	/**
-	 * Tests whether the stack is empty
+	 * Checks whether the stack is empty
 	 * @return whether the stack is empty or not
 	 */
 	public boolean isEmpty() {
@@ -48,7 +55,7 @@ public class Stack<T> {
 	}
 	
 	/**
-	 * Tests whether the stack is full
+	 * Checks whether the stack is full
 	 * @return whether the stack is full or not
 	 */
 	public boolean isFull() {

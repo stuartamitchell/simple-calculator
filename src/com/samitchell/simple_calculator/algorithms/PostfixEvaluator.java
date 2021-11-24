@@ -2,6 +2,12 @@ package com.samitchell.simple_calculator.algorithms;
 
 import com.samitchell.simple_calculator.data_structures.*;
 
+/**
+ * A class for evaluation of expressions in postfix or reverse Polish notation
+ * 
+ * @author Stuart A Mitchell
+ *
+ */
 public class PostfixEvaluator {
 	private Queue<String> postfix;
 	

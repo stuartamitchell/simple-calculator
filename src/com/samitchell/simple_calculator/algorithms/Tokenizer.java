@@ -2,6 +2,13 @@ package com.samitchell.simple_calculator.algorithms;
 
 import java.lang.Math;
 
+/**
+ * A class for handling tokenizing a mathematical expression for parsing with
+ * the shunting yard algorithm.
+ * 
+ * @author Stuart A Mitchell
+ *
+ */
 public class Tokenizer {
 	private String input;
 	

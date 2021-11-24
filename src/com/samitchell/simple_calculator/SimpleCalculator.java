@@ -4,7 +4,17 @@ import com.samitchell.simple_calculator.algorithms.*;
 import com.samitchell.simple_calculator.data_structures.*;
 import java.util.Scanner;
 
+/**
+ * The main class of the Simple Calculator command-line app
+ * 
+ * @author Stuart A Mitchell
+ *
+ */
 public class SimpleCalculator {
+	/**
+	 * Main method for Simple Calculator
+	 * @param args	represents command line arguments
+	 */
 	public static void main(String[] args) {
 		System.out.println("Welcome to Simple Calculator.\n"
 				+ "Type 'exit' to exit.");
@@ -46,5 +56,4 @@ public class SimpleCalculator {
 		
 		console.close();
 	}
-
 }

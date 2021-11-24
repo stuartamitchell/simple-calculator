@@ -1,5 +1,11 @@
 package com.samitchell.simple_calculator.algorithms;
 
+/**
+ * A class of functions for checking the types of tokens
+ * 
+ * @author Stuart A Mitchell
+ *
+ */
 public class TokenTests {
 	/**
 	 * Checks whether the token is a function
@@ -25,6 +31,11 @@ public class TokenTests {
 		return token.equals("(");
 	}
 	
+	/**
+	 * Checks whether a token is the NEG token
+	 * @param token		the token to test
+	 * @return	whether or not the token is NEG
+	 */
 	public static boolean isNEG(String token) {
 		return token.equals("NEG");
 	}
@@ -40,7 +51,7 @@ public class TokenTests {
 	
 	/**
 	 * Checks if a token is a number (always a double)
-	 * @param token
+	 * @param token		the token to test
 	 * @return	whether or not the token is a double
 	 */
 	public static boolean isNumber(String token) {
@@ -55,8 +66,8 @@ public class TokenTests {
 	
 	/**
 	 * Checks if a token is an operator
-	 * @param token
-	 * @return
+	 * @param token		the token to test
+	 * @return	whether or not the token is an operator
 	 */
 	public static boolean isOperator(String token) {
 		if (token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")

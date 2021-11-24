@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.samitchell.simple_calculator"},{"l":"com.samitchell.simple_calculator.algorithms"},{"l":"com.samitchell.simple_calculator.data_structures"}];updateSearchResults();
